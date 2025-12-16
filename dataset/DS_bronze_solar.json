@@ -8,11 +8,6 @@
 				"environment": "DEV"
 			}
 		},
-		"parameters": {
-			"fileName": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
