@@ -1,0 +1,32 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Datalake_Raw",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"environment": "DEV"
+			}
+		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@formatDateTime(utcNow(), 'yyyy-MM-dd_HH-mm')\n",
+					"type": "Expression"
+				},
+				"folderPath": "solar",
+				"container": "bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
