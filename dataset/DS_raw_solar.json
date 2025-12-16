@@ -1,0 +1,26 @@
+{
+	"name": "DS_raw_solar",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Datalake_Raw",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"environment": "DEV"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(formatDateTime(utcNow(), 'yyyy-MM-dd'), '.json')\n",
+					"type": "Expression"
+				},
+				"folderPath": "solar",
+				"container": "raw"
+			}
+		},
+		"schema": {}
+	}
+}

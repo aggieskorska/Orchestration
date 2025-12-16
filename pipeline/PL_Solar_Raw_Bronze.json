@@ -1,0 +1,72 @@
+{
+	"name": "PL_Solar_Raw_Bronze",
+	"properties": {
+		"activities": [
+			{
+				"name": "Solar_raw_bronze",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"additionalColumns": [
+							{
+								"name": "ingestion_time",
+								"value": "@utcNow()"
+							},
+							{
+								"name": "source",
+								"value": "@pipeline().parameters.solarSource"
+							}
+						],
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_raw_solar",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_bronze_solar",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"solarSource": {
+				"type": "string",
+				"defaultValue": "https://euapi.inteless.com"
+			}
+		},
+		"annotations": []
+	}
+}
