@@ -8,6 +8,11 @@
 				"environment": "DEV"
 			}
 		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
