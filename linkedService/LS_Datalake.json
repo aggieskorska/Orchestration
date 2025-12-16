@@ -1,0 +1,10 @@
+{
+	"name": "LS_Datalake",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://sasmarthomedevdatalake.dfs.core.windows.net/"
+		}
+	}
+}
