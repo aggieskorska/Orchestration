@@ -1,0 +1,23 @@
+{
+	"name": "DS_bronze_solar",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Datalake_Raw",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"environment": "DEV"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "@formatDateTime(utcNow(), 'yyyy-MM-dd')",
+				"folderPath": "solar",
+				"container": "bronze"
+			}
+		},
+		"schema": {}
+	}
+}
