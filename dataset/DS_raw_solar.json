@@ -18,7 +18,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@dataset().fileName",
+				"fileName": {
+					"value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')\n",
+					"type": "Expression"
+				},
 				"folderPath": "solar",
 				"container": "raw"
 			}
