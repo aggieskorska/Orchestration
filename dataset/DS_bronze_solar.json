@@ -19,7 +19,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@formatDateTime(utcNow(), 'yyyy-MM-dd_HH-mm')\n",
+					"value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')\n",
 					"type": "Expression"
 				},
 				"folderPath": "solar",
