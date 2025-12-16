@@ -14,7 +14,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')\n",
+					"value": "@concat(formatDateTime(utcNow(), 'yyyy-MM-dd'), '.json')\n",
 					"type": "Expression"
 				},
 				"folderPath": "solar",
