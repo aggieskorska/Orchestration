@@ -13,7 +13,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@formatDateTime(utcNow(), 'yyyy-MM-dd')",
+				"fileName": {
+					"value": "@concat(formatDateTime(utcNow(), 'yyyy-MM-dd'), '.json')\n",
+					"type": "Expression"
+				},
 				"folderPath": "solar",
 				"container": "bronze"
 			}
