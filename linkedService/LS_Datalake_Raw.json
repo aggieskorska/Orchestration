@@ -1,0 +1,17 @@
+{
+	"name": "LS_Datalake_Raw",
+	"properties": {
+		"parameters": {
+			"environment": {
+				"type": "string",
+				"defaultValue": "DEV"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://sasmarthomedevdatalake.blob.core.windows.net/",
+			"accountKind": "StorageV2"
+		}
+	}
+}
