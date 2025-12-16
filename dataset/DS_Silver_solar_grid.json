@@ -1,0 +1,23 @@
+{
+	"name": "DS_Silver_solar_grid",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_Datalake_Raw",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"environment": "DEV"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "@concat(formatDateTime(utcNow(), 'yyyy-MM-dd'), '.json')",
+				"folderPath": "solar/grid",
+				"container": "silver"
+			}
+		},
+		"schema": {}
+	}
+}
