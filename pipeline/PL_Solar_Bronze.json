@@ -1,5 +1,5 @@
 {
-	"name": "PL_Solar_Raw_Bronze",
+	"name": "PL_Solar_Bronze",
 	"properties": {
 		"activities": [
 			{
@@ -20,11 +20,17 @@
 						"additionalColumns": [
 							{
 								"name": "ingestion_time",
-								"value": "@utcNow()"
+								"value": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
 							},
 							{
 								"name": "source",
-								"value": "@pipeline().parameters.solarSource"
+								"value": {
+									"value": "@pipeline().parameters.solarSource",
+									"type": "Expression"
+								}
 							}
 						],
 						"storeSettings": {
