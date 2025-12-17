@@ -49,7 +49,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [
+					{
+						"name": "filePath",
+						"value": "@activity('Set_Up_Function').output.ItemName"
+					}
+				],
+				"linkedServiceName": {
+					"referenceName": "LS_Function_App",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
